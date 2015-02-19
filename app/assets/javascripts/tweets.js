@@ -2,7 +2,6 @@ $(function(){
   var channel = $('body').data('channel');
 
   var clientSubscribe = new Faye.Client('http://localhost:9292/faye');
-  // console.log(clientSubscribe);
 
   clientSubscribe.subscribe('/tweets/' + channel, function(tweet){
 

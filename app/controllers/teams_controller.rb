@@ -5,9 +5,7 @@ class TeamsController < ApplicationController
 
 
   def index
-    # @teams = Team.all
     Tweet.team_tweets
-    # @banners = teams_banners(@teams)
   end
 
   def show
@@ -17,7 +15,6 @@ class TeamsController < ApplicationController
     if @team.name != "EVERTON"
       @imgs = @team.instagram_images
     end
-    # @banner = team_banner(@team)
   end
 
 
@@ -52,13 +49,6 @@ class TeamsController < ApplicationController
   def team_banner(team)
     set_twitter_client.profile_banner(team.tweetstream_id).attrs[:sizes][:web_retina][:url]
     raise
-  end
-
-  def teams_banners(teams)
-    banners = []
-    teams.all.each do |team|
-      banners << team_banner(team)
-    end
   end
 
 end

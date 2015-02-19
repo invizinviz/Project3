@@ -26,4 +26,3 @@ class Tweet < ActiveRecord::Base
 
 end
 
-# curl http://localhost:9292/faye -d 'message={"channel":"messages/new", "data":"hello"}'
